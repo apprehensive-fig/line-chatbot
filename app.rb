@@ -18,8 +18,10 @@ end
 def bot_answer_to(message, user_name)
   if message.downcase.include?('hey'||'hello'||'hi')
     "Hey, what's up?"
-  elsif message.downcase.include?(/(nothing much|nm).*/)
+  elsif message.downcase.include?('nm'||'nothing much')
     "Cool"
+  elsif message.match?(/([\p{Hiragana}\p{Katakana}\p{Han}]+)/)
+     bot_jp_answer_to(message, user_name)
   elsif message.end_with?('?')
     "I don't know, #{user_name}. I'm just a cat"
   else
