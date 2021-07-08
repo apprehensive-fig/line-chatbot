@@ -16,7 +16,7 @@ def client
 end
 
 def bot_answer_to(message, user_name)
-  if message.downcase.include?(/(hello|hi|hey).*/)
+  if message.downcase.include?('hey'||'hello'||'hi')
     "Hey, what's up?"
   elsif message.downcase.include?(/(nothing much|nm).*/)
     "Cool"
