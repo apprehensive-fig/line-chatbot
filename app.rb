@@ -79,18 +79,6 @@ post '/callback' do
           event
         )
       end
-      # when receive an image message
-    when Line::Bot::Event::MessageType::Image
-      response_image = client.get_message_content(event.message['id'])
-      fetch_ibm_watson(response_image) do |image_results|
-        # Sending the image results
-        send_bot_message(
-          "Looks like#{image_results[0..1].join(', ')} or #{image_results[2]}.",
-          client,
-          event
-        )
-      end
     end
-  end
   'OK'
 end
