@@ -22,7 +22,7 @@ def bot_answer_to(message, user_name)
     "Cool"
     bot_jp_answer_to(message, user_name)
   elsif message.end_with?('?')
-    "I don't know, #{user_name}"
+    "I don't know, #{user_name}. I'm just a cat"
   else
     "Cool"
   end
