@@ -23,7 +23,7 @@ def bot_answer_to(message, user_name)
   elsif message.match?(/([\p{Hiragana}\p{Katakana}\p{Han}]+)/)
      bot_jp_answer_to(message, user_name)
   elsif message.end_with?('?')
-    "I don't know, #{user_name}. I'm just a cat"
+    "I don't know, #{user_name}. I'm just a cat."
   else
     "Cool"
   end
