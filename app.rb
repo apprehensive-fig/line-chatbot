@@ -20,7 +20,6 @@ def bot_answer_to(message, user_name)
     "Hey, what's up?"
   elsif message.downcase.include?(/(nothing much|nm).*/)
     "Cool"
-    bot_jp_answer_to(message, user_name)
   elsif message.end_with?('?')
     "I don't know, #{user_name}. I'm just a cat"
   else
