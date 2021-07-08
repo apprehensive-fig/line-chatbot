@@ -16,28 +16,10 @@ def client
 end
 
 def bot_answer_to(message, user_name)
-  if message.downcase.include?('hey'||'hello'||'hi')
-    "Hey, what's up?"
-  elsif message.downcase.include?('nm'||'nothing much')
-    "Cool"
-  elsif message.match?(/([\p{Hiragana}\p{Katakana}\p{Han}]+)/)
-     bot_jp_answer_to(message, user_name)
-  elsif message.end_with?('?')
-    "I don't know, #{user_name}. I'm just a cat."
+  if message.end_with?('?')
+    ['Try again', 'Yes', 'No', 'Maybe'].sample
   else
-    "Cool"
-  end
-end
-
-def bot_jp_answer_to(message, user_name)
-  if message.match?(/(おはよう|こんにちは|こんばんは|ヤッホー|ハロー).*/)
-    "おい、#{user_name}"
-  elsif message.match?(/.*元気.*(？|\?｜か)/)
-    "元気だわ、you?"
-  elsif message.end_with?('?','？')
-    "知らん。"
-  else
-    "なるほど。"
+    'Is that a question?'
   end
 end
 
@@ -103,7 +85,7 @@ post '/callback' do
       fetch_ibm_watson(response_image) do |image_results|
         # Sending the image results
         send_bot_message(
-          "Looking at that picture, the first words that come to me are #{image_results[0..1].join(', ')} and #{image_results[2]}. Pretty good, eh?",
+          "Looks like#{image_results[0..1].join(', ')} or #{image_results[2]}.",
           client,
           event
         )
