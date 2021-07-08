@@ -17,7 +17,7 @@ end
 
 def bot_answer_to(message, user_name)
   if message.end_with?('?')
-    ['Try again', 'Yes', 'No', 'Maybe'].sample
+    ['Try again', 'Yes', 'No', 'Maybe', 'Definitely', 'Not likely', 'Likely', 'Most likely'].sample
   else
     'Is that a question?'
   end
