@@ -16,9 +16,9 @@ def client
 end
 
 def bot_answer_to(message, user_name)
-  if message.downcase.include?(/hello|hi|hey/)
+  if message.downcase.include?(/(hello|hi|hey).*/)
     "Hey, what's up?"
-  elsif message.downcase.include?(/nothing much|nm/)
+  elsif message.downcase.include?(/(nothing much|nm).*/)
     "Cool"
     bot_jp_answer_to(message, user_name)
   elsif message.end_with?('?')
@@ -34,9 +34,9 @@ def bot_jp_answer_to(message, user_name)
   elsif message.match?(/.*元気.*(？|\?｜か)/)
     "元気だわ、you?"
   elsif message.end_with?('?','？')
-    "知らん"
+    "知らん。"
   else
-    "なるほど"
+    "なるほど。"
   end
 end
 
