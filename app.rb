@@ -16,12 +16,9 @@ def client
 end
 
 def bot_answer_to(message, user_name)
-  if message.end_with?('?')
-    ['Ask again later', 'Definitely', 'Most likely', 'Yes', 'Likely',
-     'Maybe', 'Not likely', "Don't count on it", 'Very doubtful', 'No'].sample
-  else
-    'Is that a question?'
-  end
+  #bot answers include
+  ['Ask again later', 'Definitely', 'Most likely', 'Yes', 'Likely',
+    'Maybe', 'Not likely', "Don't count on it", 'Very doubtful', 'No'].sample
 end
 
 def send_bot_message(message, client, event)
