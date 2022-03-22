@@ -18,7 +18,7 @@ end
 def bot_answer_to(message, user_name)
   #bot answers include
   ['Ask again later', 'Definitely', 'Most likely', 'Yes', 'Likely',
-    'Maybe', 'Not likely', "Don't count on it", 'Very doubtful', 'No'].sample
+    'Not likely', "Don't count on it", 'Very doubtful', 'No'].sample
 end
 
 def send_bot_message(message, client, event)
